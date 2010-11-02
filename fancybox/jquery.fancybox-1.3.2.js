@@ -324,6 +324,12 @@
 			currentIndex = selectedIndex;
 			currentOpts = selectedOpts;
 
+			if (currentOpts.enableShadow) {
+				wrap.find("*[id^=fancybox-bg-]").css("display", "block");
+			} else {
+				wrap.find("*[id^=fancybox-bg-]").css("display","none");
+			}
+
 			if (currentOpts.overlayShow) {
 				overlay.css({
 					'background-color' : currentOpts.overlayColor,
@@ -1120,6 +1126,7 @@
 		showNavArrows : true,
 		enableEscapeButton : true,
 		enableKeyboardNav : true,
+		enableShadow : true,
 
 		onStart : function(){},
 		onCancel : function(){},
